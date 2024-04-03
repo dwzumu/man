@@ -1,0 +1,352 @@
+:root {
+  --fSize1: 150px;
+  --fSize2: 30px;
+  --fSize3: 17px;
+
+  --pri-col: white;
+  --sec-col: red;
+  --tri-col: black;
+  --qua-col: #00FF1A;
+}
+
+
+/* Base Start */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--tri-col);
+  font-family: 'Times New Roman', Times, serif
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Base end */
+
+.game {
+  width: 1000px;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px var(--pri-col);
+}
+
+/* Menu screen and below are its contents */
+.startMenu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-family: "Jim Nightshade", cursive;
+  color: var(--pri-col);
+  font-size: var(--fSize1);
+  animation: 5s flicker infinite linear;
+  text-shadow: 0px 0px 5px var(--pri-col);
+  margin: 0;
+}
+
+.imgBG img {
+  width: 110%;
+  height: 110%;
+}
+
+.imgBG {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: wiggle 10s infinite;
+  z-index: -1;
+}
+
+.monster {
+  position: absolute;
+}
+
+.monsterEnd {
+  position: absolute;
+}
+
+
+/* Menu Content (Buttons and type) */
+.startContent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 350px;
+  margin: 50px;
+  position: absolute;
+}
+
+/* Menu type */
+.startType {
+  color: var(--pri-col);
+  width: 390px;
+  letter-spacing: 0.5px;
+  margin-top: 50px;
+  gap: 30px;
+}
+
+h2 {
+  font-size: var(--fSize2);
+  color: var(--pri-col);
+  margin: 0px;
+}
+
+p {
+  font-size: var(--fSize3);
+  color: var(--pri-col);
+}
+
+em {
+  color: var(--sec-col);
+  font-size: var(--fSize3);
+}
+
+/* Menu Buttons (Start button and Reset button) */
+.menuButton {
+  font-family: "Jim Nightshade", cursive;
+  font-size: 48px;
+  color: var(--pri-col);
+  background-color: var(--sec-col);
+  border: none;
+  border-radius: 40px;
+  padding: 0px 40px;
+  filter: drop-shadow(0px 0px 6px var(--sec-col));
+}
+
+/* Menu Button animations */
+.menuButton:hover {
+  animation: hoverAnim 0.2s forwards linear;
+}
+
+/* During Game screen and below are its contents */
+.gameInterface {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.UI {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.spam {
+  text-align: center;
+}
+
+.timer {
+  margin: 20px;
+}
+
+/* Flashlight button */
+.flashlight {
+  margin: 30px;
+  border-radius: 100px;
+  padding: 20px 20px;
+  display: flex;
+  border: none;
+}
+
+/*.flashlight animation*/
+.flashlight:active {
+  transform: scale(0.95);
+}
+
+.flashlight:hover {
+  scale: 105%;
+}
+
+/* Flashlight Modes */
+.green_light {
+  background-color: var(--qua-col);
+}
+
+.red_light {
+  background-color: var(--sec-col);
+}
+
+/* Ending screen and below are its contents */
+.endScreen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+.endContent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 350px;
+  margin: 50px;
+  position: absolute;
+}
+
+/* Wiggle animation (camera shaking a little) */
+/* used for Menu backgrouond */
+@keyframes wiggle {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  30% {
+    transform: translate(3px, 4px);
+  }
+
+  50% {
+    transform: translate(-8px, 10px);
+  }
+
+  80% {
+    transform: translate(20px, 15px);
+  }
+
+  90% {
+    transform: translate(10px, 10px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* Flicker Animation */
+/* Used for Title text */
+@keyframes flicker {
+  0% {
+    opacity: 0;
+  }
+
+  5% {
+    opacity: .3;
+  }
+
+  9% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: .1;
+  }
+
+  13% {
+    opacity: .5;
+  }
+
+  20% {
+    opacity: 1;
+  }
+}
+
+/* hover Animation */
+/* used for the buttons */
+@keyframes hoverAnim {
+  0% {
+    scale: 100%;
+    filter: drop-shadow(0px 0px 0px default);
+  }
+
+  100% {
+    scale: 105%;
+    filter: drop-shadow(0px 0px 6px var(--pri-col))
+  }
+}
+
+/* Wiggle animation for locked flashlight button */
+@keyframes shake {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  40% {
+    transform: translate(0px, 0px);
+  }
+  50% {
+    transform: translate(-5px, 0px);
+  }
+  60% {
+    transform: translate(5px, 0px);
+  }
+  70% {
+    transform: translate(1px, 0px);
+  }
+  75% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/*Animation examples used for death animation*/
+/* https://www.kirupa.com/snippets/getting_jittery_on_hover_using_only_css.htm */
+/*https://unused-css.com/blog/css-shake-animation/*/
+@keyframes glitch {
+
+  10% {
+    transform: translate(-2px, -3px) scale(1.01, 1.01) skewX(-15deg);
+  }
+
+  20% {
+    transform: translate(3px, 2px) scale(.99, .99) skewY(-15deg);
+  }
+
+  30% {
+    transform: translate(-4px, -5px) scale(1.01, 1.01);
+  }
+
+  40% {
+    transform: translate(2px, 3px) scale(1, 1) skewX(15deg);
+  }
+
+  50% {
+    transform: translate(-1px, -2px) scale(.98, .98) skewY(15deg);
+  }
+
+  60% {
+    transform: translate(0px, 3px) scale(1.02, 1.02);
+  }
+
+  70% {
+    transform: translate(-2px, -4px) scale(1, 1) skewX(-15deg);
+  }
+
+  80% {
+    transform: translate(3px, 5px) scale(.99, .99) (15deg);
+  }
+
+  90% {
+    transform: translate(-5px, -3px) scale(1.1, 1.1);
+  }
+
+  100% {
+    transform: translate(3px, 1px) scale(.95, .95);
+  }
+}

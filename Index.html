@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Le Man</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet">
+
+  <link href="template/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- This is the container that holds the Icons and Texts -->
+  <div class="container">
+
+    <div class="game">
+
+      <!-- This is the Start Menu -->
+      <div class="startMenu" style="display:flex">
+
+        <div class="imgBG">
+          <img src="template/img/menuBG.png" alt="menuBG">
+        </div>
+
+        <div class="startContent">
+          <h1> The Man </h1>
+          <div class="contentType">
+            <!-- we are calling the javascript for the menu to disappear here -->
+            <button class="menuButton" onclick="start();"> Start </button>
+
+            <!-- This is the type for the start menu -->
+            <div class="startType">
+              <h2>How to play</h2>
+              <p>
+                You have 60 seconds to get the creature on the "X" to capture it, but remember that it only moves in the
+                dark and make sure that it doesn't get too close.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- This is the Game interface-->
+      <div class="gameInterface" style="display:none">
+
+        <div class="UI">
+
+          <div class="timer">
+            <h2>60</h2>
+          </div>
+
+          <div>
+
+            <div class="spam" style="opacity: 0;"><em>Don't Spam!</em></div>
+
+            <button class="flashlight green_light" onclick="flashButton();">
+              <img src="template/img/flashlight.png" width="70">
+            </button>
+
+          </div>
+
+
+        </div>
+
+        <div class="imgBG" id="eeurr" style="display:flex">
+          <img class="monster" src="template/img/MonsterFiles/0.png" alt="monster">
+          <img src="template/img/FlashBG1.jpg" alt="menuBG">
+        </div>
+
+      </div>
+
+      <!-- This is the end screen -->
+      <div class="endScreen" style="display:none">
+
+        <div class="imgBG">
+
+          <img class="monsterEnd" src="template/img/MonsterFiles/10.png" alt="monster" style="display:none">
+          <img src="template/img/FlashBG3.jpg" alt="menuBG">
+
+        </div>
+
+
+
+
+
+        <div class="endContent" style="display:none">
+          <h1 class='endMessage'>The Man</h1>
+          <button class="menuButton" onclick="reset();"> Play Again? </button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!--end of container-->
+  </div>
+
+  <script src="template/js/script.js"></script>
+</body>
+
+</html>
